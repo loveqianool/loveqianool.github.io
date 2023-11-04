@@ -2,7 +2,29 @@
 <html>
     <head>
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://sdk.pushy.me/web/1.0.12/pushy-sdk.js"></script>
+<script src="https://app.notifo.io/notifo-sdk.js"></script>
+<script>
+   var notifo = window['notifo'] || (window['notifo'] = []);
+   // Initialize the plugin.
+   notifo.push(['init', {
+     userToken: 'YOUR_USER_API_KEY'
+   }]);
+
+   // Subscribe to web push.
+   notifo.push(['subscribe']);
+</script>
+
+<div id="notifo-button"></div>
+<script>
+    // Show the notifications widget.
+    notifo.push(['show-notifications', 'notifo-button', { style: 'notifo' }]);
+</script>
+
+<div id="topic-button"></div>
+<script>
+    // Show the topic widget.
+    notifo.push(['show-topic', 'topic-button', 'news/general', { style: 'heart' }]);
+</script>
     </head>
     <body>
         Hello World!
