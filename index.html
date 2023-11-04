@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="manifest" href="/manifest.json" />
-<script src="https://app.notifo.io/notifo-sdk.js"></script>
-<script>
-   var notifo = window['notifo'] || (window['notifo'] = []);
-   // Initialize the plugin.
-   notifo.push(['init', {
-     userToken: 'bfkqxqdmghw3rsu1dpmxrv6v8fbjlvs46ppfcxmwarwx'
-   }]);
-
-   // Subscribe to web push.
-   notifo.push(['subscribe']);
-</script>
-
-<div id="notifo-button"></div>
-<script>
-    // Show the notifications widget.
-    notifo.push(['show-notifications', 'notifo-button', { style: 'notifo' }]);
-</script>
-
-<div id="topic-button"></div>
-<script>
-    // Show the topic widget.
-    notifo.push(['show-topic', 'topic-button', 'news/general', { style: 'heart' }]);
+<script id="script">
+	var s = document.createElement("script")
+	s.src = "https://notix.io/ent/current/enot.min.js"
+	s.onload = function (sdk) {
+		sdk.startInstall(
+			{
+				"appId": "100640d5e65469730452d3ee368267b",
+				"loadSettings": true
+			}
+		)
+	}
+	document.head.append(s)
 </script>
     </head>
     <body>
